@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import FlashcardList from "./FlashcardList";
+import "./App.css";
 
 function App() {
+  const sampleFlashcards = [
+    {
+      id: 1,
+      question: "What is React?",
+      answer: "A JavaScript library for building UI",
+    },
+    { id: 2, question: "What is JSX?", answer: "JavaScript XML" },
+    {
+      id: 3,
+      question: "What is a component?",
+      answer: "Reusable UI building block",
+    },
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Flashcards</h1>
+      <FlashcardList flashcards={sampleFlashcards} />
     </div>
   );
 }
